@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "gmcu/sQfPro=",
+  "success": true,
+  "projectFilePath": "/Users/sreejith.k/Code/AppWeaver-Repository/rating-scale-bar/AppWeaverPCF-Rating.pcfproj",
+  "expectedPackageFiles": [
+    "/Users/sreejith.k/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/Users/sreejith.k/.nuget/packages/microsoft.netframework.referenceassemblies.net462/1.0.0/microsoft.netframework.referenceassemblies.net462.1.0.0.nupkg.sha512",
+    "/Users/sreejith.k/.nuget/packages/microsoft.powerapps.msbuild.pcf/1.50.1/microsoft.powerapps.msbuild.pcf.1.50.1.nupkg.sha512"
+  ],
+  "logs": []
+}

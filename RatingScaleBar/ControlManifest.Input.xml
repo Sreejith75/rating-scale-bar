@@ -24,6 +24,7 @@
       <value name="10" display-name-key="10 Points" description-key="10-point rating scale">10</value>
     </property>
     <property name="defaultValue" display-name-key="Default Value" description-key="Default rating value (optional)" of-type="Whole.None" usage="input" required="false" />
+    <property name="reset" display-name-key="Reset" description-key="Reset the rating to default value" of-type="TwoOptions" usage="input" required="false" />
     <!--
       Property node's of-type attribute can be of-type-group attribute.
       Example:
@@ -39,7 +40,7 @@
       <code path="index.ts" order="1"/>
       <css path="css/RatingScaleBar.css" order="1" />
       <platform-library name="React" version="16.14.0" />
-      <platform-library name="Fluent" version="9.68.0" />
+      <platform-library name="Fluent" version="9.46.0" />
       <!-- UNCOMMENT TO ADD MORE RESOURCES
       <resx path="strings/RatingScaleBar.1033.resx" version="1.0.0" />
       -->

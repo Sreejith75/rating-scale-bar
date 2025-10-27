@@ -39,6 +39,7 @@ export class RatingScaleBar implements ComponentFramework.ReactControl<IInputs, 
             value: this.value,
             scale: context.parameters.scale.raw,
             defaultValue: context.parameters.defaultValue.raw ?? undefined,
+            reset: context.parameters.reset.raw ?? false,
             onChange: this.onChange.bind(this)
         };
         return React.createElement(

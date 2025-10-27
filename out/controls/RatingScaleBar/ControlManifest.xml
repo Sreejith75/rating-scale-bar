@@ -8,11 +8,12 @@
       <value name="10" display-name-key="10 Points" description-key="10-point rating scale">10</value>
     </property>
     <property name="defaultValue" display-name-key="Default Value" description-key="Default rating value (optional)" of-type="Whole.None" usage="input" required="false"/>
+    <property name="reset" display-name-key="Reset" description-key="Reset the rating to default value" of-type="TwoOptions" usage="input" required="false"/>
     <resources>
       <code path="bundle.js" order="1"/>
       <css path="css/RatingScaleBar.css" order="1"/>
       <platform-library name="React" version="16.14.0"/>
-      <platform-library name="Fluent" version="9.68.0"/>
+      <platform-library name="Fluent" version="9.46.0"/>
     </resources>
     <feature-usage/>
     <built-by name="pac" version="1.50.1"/>

@@ -7,6 +7,7 @@ export interface IInputs {
     value: ComponentFramework.PropertyTypes.WholeNumberProperty;
     scale: ComponentFramework.PropertyTypes.EnumProperty<"5" | "10">;
     defaultValue: ComponentFramework.PropertyTypes.WholeNumberProperty;
+    reset: ComponentFramework.PropertyTypes.TwoOptionsProperty;
 }
 export interface IOutputs {
     value?: number;
