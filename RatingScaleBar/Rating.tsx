@@ -31,11 +31,30 @@ export class Rating extends React.Component<IRatingProps, { selectedValue: numbe
     this.props.onChange(value);
   };
 
-  private getColor = (index: number, max: number): string => {
-    const ratio = index / max;
-    if (ratio <= 0.33) return '#ff0000'; // red
-    if (ratio <= 0.66) return '#ffff00'; // yellow
-    return '#00ff00'; // green
+  private getGradient = (selectedValue: number, max: number): string => {
+    if (selectedValue === 0) return 'transparent';
+
+    const ratio = selectedValue / max;
+
+    // Create smooth progressive gradient with even color transitions
+    const stops = [];
+
+    // Always start with red
+    stops.push('#ff0000 0%');
+
+    if (ratio <= 0.2) {
+      stops.push('#ff2222 20%', '#ff4444 40%', '#ff6666 60%', '#ff8888 80%', '#ffaaaa 100%');
+    } else if (ratio <= 0.4) {
+      stops.push('#ff2200 15%', '#ff4400 30%', '#ff6600 45%', '#ff8800 60%', '#ffaa00 75%', '#ffcc00 90%', '#ffee00 100%');
+    } else if (ratio <= 0.6) {
+      stops.push('#ff4400 12%', '#ff6600 25%', '#ff8800 37%', '#ffaa00 50%', '#ffcc00 62%', '#ffee00 75%', '#ffff00 87%', '#ddff00 100%');
+    } else if (ratio <= 0.8) {
+      stops.push('#ff6600 10%', '#ff8800 20%', '#ffaa00 30%', '#ffcc00 40%', '#ffee00 50%', '#ffff00 60%', '#ddff00 70%', '#bbff00 80%', '#99ff00 90%', '#77ff00 100%');
+    } else {
+      stops.push('#ff8800 8%', '#ffaa00 16%', '#ffcc00 25%', '#ffee00 33%', '#ffff00 41%', '#ddff00 50%', '#bbff00 58%', '#99ff00 66%', '#77ff00 75%', '#55ff00 83%', '#33ff00 91%', '#00ff00 100%');
+    }
+
+    return `linear-gradient(to right, ${stops.join(', ')})`;
   };
 
 
@@ -50,7 +69,7 @@ export class Rating extends React.Component<IRatingProps, { selectedValue: numbe
       return (
         <div className="rating-container">
           <div className="rating-bar">
-            <div className="rating-fill" style={{ width: `${fillPercentage}%` }}></div>
+            <div className="rating-fill" style={{ width: `${fillPercentage}%`, background: this.getGradient(selectedValue, max) }}></div>
             {points.map((point, index) => (
               <div
                 key={point}
